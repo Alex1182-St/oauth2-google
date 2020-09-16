@@ -20,7 +20,7 @@ class CustomOidUserService(private val googleUserRepo : GoogleUserRepository)
         val oidUser: OidcUser = super.loadUser(userRequest)
         val attributes: Map<String, Any> = oidUser.attributes
         val userInfo = GoogleOauth2UserInfo(
-                id = attributes["sub"] as String,
+                googleId = attributes["sub"] as String,
                 name = attributes["name"] as String,
                 email = attributes["email"] as String
         )
@@ -36,7 +36,8 @@ class CustomOidUserService(private val googleUserRepo : GoogleUserRepository)
                         GoogleUserEntity(
                                 name = userInfo.name,
                                 userType = UserTypeEnum.GOOGLE,
-                                email = userInfo.email
+                                email = userInfo.email,
+                                googleId = userInfo.googleId
                                 ))
 
         googleUserRepo.save(googleUserEntity)

@@ -15,6 +15,9 @@ data class GoogleUserEntity (
         val id : UUID = UUID.randomUUID(),
 
         @Column(nullable = false)
+        val googleId : String,
+
+        @Column(nullable = false, unique = true)
         val email : String,
 
         @Column(nullable = false)
