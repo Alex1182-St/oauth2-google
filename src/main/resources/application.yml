@@ -1,0 +1,23 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: "jdbc:postgresql://${DATABASE_HOST:localhost}:${DATABASE_PORT:5432}/testDB3"
+    name: "testDB3"
+    username: "userDB3"
+    password: "userDB3"
+    initialization-mode: always
+    driver-class-name: org.postgresql.Driver
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: cl-id
+            client-secret: cl-secret
+            redirect-uri: http://localhost:8080/oauth2/myauthorizedredirecturi/google
+  jpa:
+    generate-ddl: true
+    hibernate:
+      ddl-auto: create-drop
