@@ -14,8 +14,8 @@ spring:
       client:
         registration:
           google:
-            client-id: 319246564491-2k6lsdecbq5grij2pd717losap8cuoc5.apps.googleusercontent.com
-            client-secret: tPQef9cajZzSMHWz0Pa-89_g
+            client-id: id
+            client-secret: secret
             redirect-uri: http://localhost:8080/oauth2/myauthorizedredirecturi/google
   jpa:
     generate-ddl: true
