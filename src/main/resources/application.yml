@@ -14,8 +14,8 @@ spring:
       client:
         registration:
           google:
-            client-id: cl-id
-            client-secret: cl-secret
+            client-id: id
+            client-secret: secret
             redirect-uri: http://localhost:8080/oauth2/myauthorizedredirecturi/google
   jpa:
     generate-ddl: true
