@@ -17,6 +17,8 @@ class SecurityConfig (
 
     override fun configure(http: HttpSecurity) {
 
+        http.csrf().disable()
+
         http
                 .authorizeRequests()
                 .antMatchers("/app/byMail").permitAll()
